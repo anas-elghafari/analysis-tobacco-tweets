@@ -1,0 +1,12 @@
+For each tweet, please categorize the MAIN SUBJECT or main focus, according to the following criteria:
+
+-1st person: the author is talking mainly about herself/himself (I, me) or about a group she/he is a part of (we, us, me and my friends). Examples: "I went to school", "my car is not working", "I need a cigarette", "me and my friends will be partying tonight", "we couldn't leave early".
+
+-2nd person: the author is talking mainly to a particular person or talking to all his followers or audience. Examples: "you guys are great", "@john stop doing that". "@Sarah 
+
+-3rd person: the author is talking mainly about someone else (individual or group), but not addressing them. Examples: "I ran into Mike and he was super drunk", "the guys at my school all smoke heavily". 
+
+-NONE-of-the-above: Some tweets do not refer to anyone, some of the tweets are just stating general fact without referring to anyone at all. Examples: "smoking is dangerous", "it's raining a lot today". Or, the tweet is spam or an advertisement, or the content is not understood.
+
+Then categorize if the tweet is about something that has already happened and finished (PAST), or something that is happening at the time of the tweet (PRESENT), or something that will happen later (FUTURE)
+
