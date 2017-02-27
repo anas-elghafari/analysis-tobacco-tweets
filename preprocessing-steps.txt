@@ -1,0 +1,35 @@
+How the training set was collected and filtered:
+
+-Use Python library Tweepy to interface with Twitter's API
+
+-use lang="en" to restrict to English language
+
+-Use result-type= "mixed" in the search call. according to the documentation, this should return a mixture of recent tweets and popular tweets
+
+-If a tweet has substring "RT " then it will be discarded and not written to the file.
+
+-After finishing the fetching the tweets, remove the URLs (replaced by the empty string).
+      -this was done using python regex (see helping functions)
+      -the function removes only one URL from each tweet. better to apply 3-4 times as some tweets have several URLs
+      
+-To remove duplicates, hash the tweet texts:
+      -In python, create a dictionary where the key is the tweet text and the value is the row (the other info collected like date and username)
+      -since the keys are hashed, two similar strings get the same hash and are mapped to the same value
+      -the key,value pairs are used to construct a csv file where every tweet is unqie.
+      
+-Optional step: to remove near-duplicates: sort the keys (using sorted() function) then use difflib.SequenceMatcher to remove tweets that
+are 0.9 similar to nearby tweets (nearyby in the sorting). On a set of 13,000 tweets, I found that only about 20 tweets are near-duplicates
+so this step was not performed
+
+
+-Amazon's Mechanical Turk objected to the presence of emojis in the file. These were removed by creating a character map from each character 
+above 0x100 to the unacceptable character symbol 0xfffd.
+    -emoji_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
+    -for every tweet:  tweet.translate(emoji_map)
+    
+
+-AMT also objected to some unicode characters that are 3 bytes or larger. These were removed manually, by locating the line where AMT threw
+an objection, removing the offending characters from the entire file (replace all) replacing them with "--"
+
+
+ 
