@@ -1,3 +1,13 @@
+'''
+Script originally written by Kunal Relia.  
+This version has been modified by Anas Elghafari
+Changes include:
+    checking rate_limit and using that to calculate number of calls per keyword
+    not using Cursor object (as it can make an arbitrary number of calls to the API)
+ 
+'''
+
+
 from collections import OrderedDict
 from datetime import date
 import tweepy, time, json, csv
